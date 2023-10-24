@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./frontend/src",
+    "checkJs": true,
+    "jsx": "react"
+  }
+}
