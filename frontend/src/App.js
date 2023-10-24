@@ -2,18 +2,20 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import HomeScreen from "./components/HomeScreen";
+import { Outlet } from "react-router-dom";
 
-export default () => {
+const App = () => {
   return (
     <>
       <Header />
       <main className="py-3">
         <Container>
-          <HomeScreen />
+          <Outlet />
         </Container>
       </main>
       <Footer />
     </>
   );
 };
+
+export default App;
