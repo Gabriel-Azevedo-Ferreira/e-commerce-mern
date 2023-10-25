@@ -2864,12 +2864,12 @@ fieldset:disabled a.btn {
 }
 .btn-light {
   color: #1a1a1a;
-  background-color: #fff;
+  background-color: #ececec;
   border-color: #fff;
 }
 .btn-light:hover {
   color: #1a1a1a;
-  background-color: #ececec;
+  background-color: #dadada;
   border-color: #e6e5e5;
 }
 .btn-light:focus,
