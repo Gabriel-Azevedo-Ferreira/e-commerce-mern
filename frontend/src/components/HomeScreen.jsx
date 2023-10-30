@@ -2,15 +2,22 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Product from "./Product";
 import { useGetProductsQuery } from "../slice/productApiSlice";
+import Loader from "./Loader";
+import Message from "./Message";
 
 const HomeScreen = () => {
   const { data: products, isLoading, isError, error } = useGetProductsQuery();
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <Loader />
       ) : isError ? (
-        <div>{error?.data?.messsage}</div>
+        <Message variant="danger">
+          {
+            // @ts-ignore
+            error?.data?.messsage
+          }
+        </Message>
       ) : (
         <div>
           Lastest Products

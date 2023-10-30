@@ -11,7 +11,7 @@ import {
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import HomeScreen from "./components/HomeScreen";
-import ProductScreen from "./ProductScreen";
+import ProductScreen from "./components/ProductScreen";
 import { Provider } from "react-redux";
 import store from "./store";
 
