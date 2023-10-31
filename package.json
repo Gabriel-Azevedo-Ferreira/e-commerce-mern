@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "data:delete": "node seeder -d",
+    "data:import": "node seeder -i"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,11 @@
   },
   "homepage": "https://github.com/Gabriel-Azevedo-Ferreira/e-commerce-mern#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "expres": "^0.0.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^6.2.0",
+    "mongoose": "^7.6.3"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",
