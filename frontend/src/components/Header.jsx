@@ -24,7 +24,7 @@ const Header = () => {
                       bg="success"
                       style={{ marginLeft: "5px", minWidth: "20px" }}
                     >
-                      {cartItems.reduce((a, c) => a + c.qty, 0)}
+                      {cartItems.reduce((a, c) => a + Number(c.qty), 0)}
                     </Badge>
                   )}
                 </Nav.Link>

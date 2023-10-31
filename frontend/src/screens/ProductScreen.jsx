@@ -14,11 +14,10 @@ import { useGetProductByIdQuery } from "../slice/productApiSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { useState } from "react";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../slice/cartSlice";
 
 const ProductScreen = () => {
-  const store = useStore();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
