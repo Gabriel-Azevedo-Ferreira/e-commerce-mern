@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import HomeScreen from "./components/HomeScreen";
-import ProductScreen from "./components/ProductScreen";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
 import { Provider } from "react-redux";
 import store from "./store";
 

@@ -1,4 +1,4 @@
-import Rating from "./Rating";
+import Rating from "../components/Rating";
 import React from "react";
 import {
   Card,
@@ -11,8 +11,8 @@ import {
 } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetProductByIdQuery } from "../slice/productApiSlice";
-import Loader from "./Loader";
-import Message from "./Message";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 import { useState } from "react";
 import { useDispatch, useSelector, useStore } from "react-redux";
 import { addToCart } from "../slice/cartSlice";

@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Product from "./Product";
+import Product from "../components/Product";
 import { useGetProductsQuery } from "../slice/productApiSlice";
-import Loader from "./Loader";
-import Message from "./Message";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 const HomeScreen = () => {
   const { data: products, isLoading, isError, error } = useGetProductsQuery();
