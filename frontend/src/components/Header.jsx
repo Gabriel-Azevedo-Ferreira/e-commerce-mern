@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
+  const { userInfo } = useSelector((state) => state.auth);
+  const loggedIn = !!userInfo;
   return (
     <header>
       <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
@@ -29,9 +31,9 @@ const Header = () => {
                   )}
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to={loggedIn? "/logout": "/login"}>
+              <LinkContainer to={loggedIn ? "/logout" : "/login"}>
                 <Nav.Link>
-                  <FaUser /> {loggedIn? Sign out: Sign In}
+                  <FaUser /> {loggedIn ? "Sign out" : "Sign In"}
                 </Nav.Link>
               </LinkContainer>
             </Nav>
