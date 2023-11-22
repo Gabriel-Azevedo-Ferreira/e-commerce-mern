@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { retry } from "@reduxjs/toolkit/query";
 
 const addDecimals = (num) => (Math.round(num * 100) / 100).toFixed(2);
 
@@ -29,9 +28,18 @@ const cartSlice = createSlice({
       state.shippingAddress = action.payload;
       return updateCart(state);
     },
+    savePaymentMethod: (state, action) => {
+      state.paymentMethods = action.payload;
+      return updateCart(state);
+    },
   },
 });
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  saveShippingAdress,
+  savePaymentMethod,
+} = cartSlice.actions;
 export default cartSlice;
 
 const updateCart = (state) => {
