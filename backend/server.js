@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import productRouter from "./routes/productRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorMidleware.js";
 
 connectDB();
@@ -20,6 +21,7 @@ app.use(cookieParser());
 
 app.use("/api/product", productRouter);
 app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 app.use(notFound);
 app.use(errorHandler);
 
