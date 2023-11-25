@@ -8,7 +8,7 @@ import asyncHandler from "../middleware/asyncHandler.js";
 // @access  Private
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
-    orderItem   s,
+    orderItems,
     shippingAddress,
     paymentMethod,
     itemsPrice,

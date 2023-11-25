@@ -39,7 +39,6 @@ const PlaceOrderScreen = () => {
       taxPrice,
       totalPrice,
     });
-    console.log(res);
     if (res.error) {
       toast.error(res.error.data.message || res.error.data);
     } else {
