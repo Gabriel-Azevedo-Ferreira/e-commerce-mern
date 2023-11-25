@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCreateOrderMutation } from "../slice/ordersApiSlice";
 import { clearCartItems } from "../slice/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "../components/Loader";
 
 const PlaceOrderScreen = () => {
   const {
@@ -18,7 +19,6 @@ const PlaceOrderScreen = () => {
     taxPrice,
     totalPrice,
   } = useSelector((state) => state.cart);
-  console.log(useSelector((state) => state.cart));
   const [createOrder, { isLoading }] = useCreateOrderMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ const PlaceOrderScreen = () => {
       toast.error(res.error.data.message || res.error.data);
     } else {
       // dispatch(clearCartItems());
-      navigate(`orders/${res._id}`);
+      navigate(`/orders/${res.data._id}`);
     }
   };
   return (
@@ -148,6 +148,7 @@ const PlaceOrderScreen = () => {
         </Col>
       </Row>
       <ToastContainer />
+      {isLoading && <Loader />}
     </>
   );
 };
