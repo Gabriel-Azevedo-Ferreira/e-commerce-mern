@@ -4,7 +4,7 @@ const addDecimals = (num) => (Math.round(num * 100) / 100).toFixed(2);
 
 const initialState = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
-  : { cartItems: [], shippingAddress: {}, paymentMethods: "PayPal" };
+  : { cartItems: [], shippingAddress: {}, paymentMethod: "PayPal" };
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -29,7 +29,11 @@ const cartSlice = createSlice({
       return updateCart(state);
     },
     savePaymentMethod: (state, action) => {
-      state.paymentMethods = action.payload;
+      state.paymentMethod = action.payload;
+      return updateCart(state);
+    },
+    clearCartItems: (state, action) => {
+      state.cartItems = [];
       return updateCart(state);
     },
   },
@@ -39,6 +43,7 @@ export const {
   removeFromCart,
   saveShippingAdress,
   savePaymentMethod,
+  clearCartItems,
 } = cartSlice.actions;
 export default cartSlice;
 

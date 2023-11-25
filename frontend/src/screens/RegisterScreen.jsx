@@ -35,7 +35,6 @@ const RegisterScreen = () => {
     else {
       const res = await register({ name, email, password });
       if (res.error) {
-        console.log("here");
         toast.error(res.error.data.message || res.error);
       } else dispatch(setCredentials({ ...res.data }));
     }
